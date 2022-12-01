@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg"
+    android:padding="32dp"
+    tools:context=".Login">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Order details"
+        android:textSize="32dp"
+        android:textColor="@color/primary"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Status"
+        android:textSize="28dp"
+        android:textColor="@color/primary"
+        android:textStyle="bold"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+
+        <TableRow>
+            <TextView
+                android:text="Order Number"
+                android:textSize="18dp"
+                android:padding="3dp"
+                android:textColor="@color/text_light" />
+            <TextView
+                android:id="@+id/order_id"
+                android:text="Order Number"
+                android:textSize="18dp"
+                android:gravity="right"
+                android:padding="3dp"
+                android:textColor="@color/text_light" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Order Placed Date"
+                android:textSize="18dp"
+                android:padding="3dp"
+                android:textColor="@color/text_light" />
+            <TextView
+                android:id="@+id/order_placed"
+                android:text="Order Placed Date"
+                android:textSize="18dp"
+                android:gravity="right"
+                android:padding="3dp"
+                android:textColor="@color/text_light" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Note"
+                android:textSize="18dp"
+                android:padding="3dp"
+                android:textColor="@color/text_light" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/order_note"
+                android:text="Order Note"
+                android:textSize="18dp"
+                android:padding="3dp"
+                android:textColor="@color/text_light" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Description"
+                android:textSize="18dp"
+                android:padding="3dp"
+                android:textColor="@color/text_light" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_weight="1"
+                android:minLines="8"
+                android:maxLines="16"
+                android:layout_width="match_parent"
+                android:id="@+id/order_description"
+                android:text="Order Description"
+                android:textSize="18dp"
+                android:padding="3dp"
+                android:textColor="@color/text_light" />
+        </TableRow>
+    </TableLayout>
+    <Button
+        android:id="@+id/close_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to Home"/>
+</LinearLayout>

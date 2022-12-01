@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.courierappmobile.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            app:destination="@+id/nav_home"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_instructions"
+        android:name="com.example.courierappmobile.InstructionsFragment"
+        android:label="@string/instructions"
+        tools:layout="@layout/fragment_instructions">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_request_order"
+        android:name="com.example.courierappmobile.RequestOrderFragment"
+        android:label="@string/request_order"
+        tools:layout="@layout/fragment_request_order">
+    </fragment>
+
+</navigation>
