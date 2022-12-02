@@ -18,13 +18,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-
     <ProgressBar
         android:id="@+id/loading"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:theme="@style/Theme.CourierAppMobile" />
-
 
     <TextView
         android:id="@+id/error"
@@ -38,8 +36,5 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recycler_view"
-        />
-
-
+        android:id="@+id/recycler_view"/>
 </LinearLayout>

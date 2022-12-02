@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         if (response.equals("success")) {
                             SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString("logged_in", "true");
+                            editor.putString("logged_in", "");
                             editor.putString("name", "");
                             editor.putString("email", "");
                             editor.putString("userKey", "");
@@ -229,5 +229,4 @@ public class MainActivity extends AppCompatActivity {
         };
         queue.add(stringRequest);
     }
-
 }
