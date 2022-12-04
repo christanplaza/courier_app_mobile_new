@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".OnGoingOrderDetails">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="32dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="Order details"
+            android:textColor="@color/primary"
+            android:textSize="32dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/date_placed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer Name"
+            android:textColor="@color/primary"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/order_customer_contact_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="Contact Number"
+            android:textColor="@color/primary"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1">
+
+            <TableRow>
+
+                <TextView
+                    android:padding="3dp"
+                    android:text="Order Number"
+                    android:textColor="@color/primary"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/order_id"
+                    android:gravity="right"
+                    android:padding="3dp"
+                    android:text="Order Number"
+                    android:textColor="@color/text_light"
+                    android:textSize="18dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:padding="3dp"
+                    android:text="Order Placed Date"
+                    android:textColor="@color/primary"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/order_placed"
+                    android:gravity="right"
+                    android:padding="3dp"
+                    android:text="Order Placed Date"
+                    android:textColor="@color/text_light"
+                    android:textSize="18dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_span="2"
+                    android:padding="3dp"
+                    android:text="Note"
+                    android:textColor="@color/primary"
+                    android:textSize="18dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/order_note"
+                    android:layout_span="2"
+                    android:padding="3dp"
+                    android:text="Order Note"
+                    android:textColor="@color/text_light"
+                    android:textSize="18dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_span="2"
+                    android:padding="3dp"
+                    android:text="Pickup Address"
+                    android:textColor="@color/primary"
+                    android:textSize="18dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/order_pickup_address"
+                    android:layout_width="match_parent"
+                    android:layout_span="2"
+                    android:layout_weight="1"
+                    android:maxLines="4"
+                    android:minLines="2"
+                    android:padding="3dp"
+                    android:text="Pickup Address"
+                    android:textColor="@color/text_light"
+                    android:textSize="18dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_span="2"
+                    android:padding="3dp"
+                    android:text="Delivery Address"
+                    android:textColor="@color/primary"
+                    android:textSize="18dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/order_address"
+                    android:layout_width="match_parent"
+                    android:layout_span="2"
+                    android:layout_weight="1"
+                    android:maxLines="4"
+                    android:minLines="2"
+                    android:padding="3dp"
+                    android:text="Order Address"
+                    android:textColor="@color/text_light"
+                    android:textSize="18dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_span="2"
+                    android:padding="3dp"
+                    android:text="Description"
+                    android:textColor="@color/primary"
+                    android:textSize="18dp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/order_description"
+                    android:layout_width="match_parent"
+                    android:layout_span="2"
+                    android:layout_weight="1"
+                    android:maxLines="8"
+                    android:minLines="4"
+                    android:padding="3dp"
+                    android:text="Order Description"
+                    android:textColor="@color/text_light"
+                    android:textSize="18dp" />
+            </TableRow>
+        </TableLayout>
+        <Button
+            android:id="@+id/approve_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Mark as Delivered" />
+        <Button
+            android:id="@+id/decline_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/bg"
+            android:text="Mark as Cancelled" />
+
+        <Button
+            android:id="@+id/home_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/bg_light"
+            android:text="Back to Home" />
+    </LinearLayout>
+</ScrollView>

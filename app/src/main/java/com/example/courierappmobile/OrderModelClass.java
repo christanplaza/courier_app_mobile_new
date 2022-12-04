@@ -6,13 +6,17 @@ public class OrderModelClass {
     String note;
     String status;
     String datePlaced;
+    String address;
+    String pickupAddress;
 
-    public OrderModelClass(String id, String description, String note, String status, String datePlaced) {
+    public OrderModelClass(String id, String description, String note, String status, String datePlaced, String address, String pickupAddress) {
         this.id = id;
         this.description = description;
         this.note = note;
         this.status = status;
         this.datePlaced = datePlaced;
+        this.address = address;
+        this.pickupAddress = pickupAddress;
     }
 
     public OrderModelClass() {
@@ -56,5 +60,21 @@ public class OrderModelClass {
 
     public void setDatePlaced(String datePlaced) {
         this.datePlaced = datePlaced;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPickupAddress() {
+        return pickupAddress;
+    }
+
+    public void setPickupAddress(String pickupAddress) {
+        this.pickupAddress = pickupAddress;
     }
 }

@@ -23,6 +23,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Driver;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,12 +49,6 @@ public class Login extends AppCompatActivity {
         textRegisterNow = findViewById(R.id.register_now);
         sharedPreferences = getSharedPreferences("courier_app", MODE_PRIVATE);
 
-//        if (sharedPreferences.getString("logged", "false").equals(true)) {
-//            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }
-
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,7 +56,7 @@ public class Login extends AppCompatActivity {
                 password = textInputEditTextPassword.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url = "http://192.168.1.8/courier_app_web/login.php";
+                String url = Global.Root_IP + "courier_app_web/login.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
@@ -86,9 +81,15 @@ public class Login extends AppCompatActivity {
                                         editor.putString("role", role);
                                         editor.apply();
 
-                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                        startActivity(intent);
-                                        finish();
+                                        if (role.equals("driver")) {
+                                            Intent intent = new Intent(getApplicationContext(), DriverMainActivity.class);
+                                            startActivity(intent);
+                                            finish();
+                                        } else {
+                                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                            startActivity(intent);
+                                            finish();
+                                        }
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();

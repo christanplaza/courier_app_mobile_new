@@ -61,7 +61,7 @@ public class PendingOrdersFragment extends Fragment implements RecyclerViewInter
         recyclerView.setAdapter(adapter);
 
         RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
-        String url = "http://192.168.1.8/courier_app_web/job_orders/pending.php";
+        String url = Global.Root_IP + "courier_app_web/job_orders/pending.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -88,6 +88,8 @@ public class PendingOrdersFragment extends Fragment implements RecyclerViewInter
                                     orderModel.setCustomerName(jsonObject1.getString("name"));
                                     orderModel.setCustomerContactNumber(jsonObject1.getString("contact_number"));
                                     orderModel.setCustomerEmail(jsonObject1.getString("email"));
+                                    orderModel.setCustomerAddress(jsonObject1.getString("delivery_address"));
+                                    orderModel.setCustomerPickupAddress(jsonObject1.getString("pickup_address"));
 
                                     orderList.add(orderModel);
                                 }
@@ -132,6 +134,8 @@ public class PendingOrdersFragment extends Fragment implements RecyclerViewInter
         intent.putExtra("name", orderList.get(position).getCustomerName());
         intent.putExtra("email", orderList.get(position).getCustomerEmail());
         intent.putExtra("contact_number", orderList.get(position).getCustomerContactNumber());
+        intent.putExtra("address", orderList.get(position).getCustomerAddress());
+        intent.putExtra("pickup_address", orderList.get(position).getCustomerPickupAddress());
 
         startActivity(intent);
     }

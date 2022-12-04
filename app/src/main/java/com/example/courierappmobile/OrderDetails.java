@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class OrderDetails extends AppCompatActivity {
-    TextView orderNumber, orderPlaced, orderNote, orderDescription, orderStatus;
+    TextView orderNumber, orderPlaced, orderNote, orderDescription, orderStatus, orderAddress, orderPickupAddress;
     Button closeButton;
 
     @Override
@@ -24,12 +24,16 @@ public class OrderDetails extends AppCompatActivity {
         orderDescription = findViewById(R.id.order_description);
         orderStatus = findViewById(R.id.order_status);
         closeButton = findViewById(R.id.close_button);
+        orderAddress = findViewById(R.id.order_address);
+        orderPickupAddress = findViewById(R.id.order_pickup_address);
 
         orderNumber.setText(getIntent().getStringExtra("id"));
         orderDescription.setText(getIntent().getStringExtra("description"));
         orderNote.setText(getIntent().getStringExtra("note"));
         orderPlaced.setText(getIntent().getStringExtra("date_placed"));
         orderStatus.setText(getIntent().getStringExtra("status"));
+        orderAddress.setText(getIntent().getStringExtra("address"));
+        orderPickupAddress.setText(getIntent().getStringExtra("pickup_address"));
 
         OrdersFragment ordersFragment = new OrdersFragment();
 

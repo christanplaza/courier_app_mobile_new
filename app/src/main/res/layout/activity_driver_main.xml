@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@color/bg"
-tools:context=".Login">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".DriverMainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="32dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:padding="16dp"
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
-                android:text="Order details"
+                android:id="@+id/driver_header"
+                android:text="Header"
                 android:textColor="@color/primary"
-                android:textSize="32dp"
-                android:textStyle="bold" />
+                android:textSize="48sp"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
             <TextView
-                android:id="@+id/date_placed"
+                android:id="@+id/driver_customer_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Customer Name"
@@ -32,7 +36,7 @@ tools:context=".Login">
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/order_customer_contact_number"
+                android:id="@+id/driver_customer_contact_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="40dp"
@@ -45,76 +49,33 @@ tools:context=".Login">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:stretchColumns="1">
-
                 <TableRow>
-
                     <TextView
+                        android:id="@+id/label_date"
                         android:padding="3dp"
-                        android:text="Order Number"
+                        android:text="Estimated Date"
                         android:textColor="@color/primary"
                         android:textSize="18dp" />
-
                     <TextView
-                        android:id="@+id/order_id"
+                        android:id="@+id/driver_estimated_date"
                         android:gravity="right"
                         android:padding="3dp"
-                        android:text="Order Number"
+                        android:text="Date"
                         android:textColor="@color/text_light"
                         android:textSize="18dp" />
                 </TableRow>
-
                 <TableRow>
-
                     <TextView
-                        android:padding="3dp"
-                        android:text="Order Placed Date"
-                        android:textColor="@color/primary"
-                        android:textSize="18dp" />
-
-                    <TextView
-                        android:id="@+id/order_placed"
-                        android:gravity="right"
-                        android:padding="3dp"
-                        android:text="Order Placed Date"
-                        android:textColor="@color/text_light"
-                        android:textSize="18dp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:layout_span="2"
-                        android:padding="3dp"
-                        android:text="Note"
-                        android:textColor="@color/primary"
-                        android:textSize="18dp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
-                        android:id="@+id/order_note"
-                        android:layout_span="2"
-                        android:padding="3dp"
-                        android:text="Order Note"
-                        android:textColor="@color/text_light"
-                        android:textSize="18dp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <TextView
+                        android:id="@+id/label_address"
                         android:layout_span="2"
                         android:padding="3dp"
                         android:text="Pickup Address"
                         android:textColor="@color/primary"
                         android:textSize="18dp" />
                 </TableRow>
-
                 <TableRow>
-
                     <TextView
-                        android:id="@+id/order_pickup_address"
+                        android:id="@+id/driver_pickup_address"
                         android:layout_width="match_parent"
                         android:layout_span="2"
                         android:layout_weight="1"
@@ -125,21 +86,18 @@ tools:context=".Login">
                         android:textColor="@color/text_light"
                         android:textSize="18dp" />
                 </TableRow>
-
                 <TableRow>
-
                     <TextView
+                        android:id="@+id/label_delivery"
                         android:layout_span="2"
                         android:padding="3dp"
                         android:text="Delivery Address"
                         android:textColor="@color/primary"
                         android:textSize="18dp" />
                 </TableRow>
-
                 <TableRow>
-
                     <TextView
-                        android:id="@+id/order_address"
+                        android:id="@+id/driver_delivery_address"
                         android:layout_width="match_parent"
                         android:layout_span="2"
                         android:layout_weight="1"
@@ -150,21 +108,18 @@ tools:context=".Login">
                         android:textColor="@color/text_light"
                         android:textSize="18dp" />
                 </TableRow>
-
                 <TableRow>
-
                     <TextView
+                        android:id="@+id/label_description"
                         android:layout_span="2"
                         android:padding="3dp"
                         android:text="Description"
                         android:textColor="@color/primary"
                         android:textSize="18dp" />
                 </TableRow>
-
                 <TableRow>
-
                     <TextView
-                        android:id="@+id/order_description"
+                        android:id="@+id/driver_customer_description"
                         android:layout_width="match_parent"
                         android:layout_span="2"
                         android:layout_weight="1"
@@ -175,25 +130,34 @@ tools:context=".Login">
                         android:textColor="@color/text_light"
                         android:textSize="18dp" />
                 </TableRow>
+                <TableRow>
+                    <TextView
+                        android:id="@+id/label_note"
+                        android:layout_span="2"
+                        android:padding="3dp"
+                        android:text="Note"
+                        android:textColor="@color/primary"
+                        android:textSize="18dp" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:id="@+id/driver_customer_note"
+                        android:layout_span="2"
+                        android:padding="3dp"
+                        android:text="Order Note"
+                        android:textColor="@color/text_light"
+                        android:textSize="18dp" />
+                </TableRow>
             </TableLayout>
-            <Button
-                android:id="@+id/approve_button"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Finalize Order and Approve" />
-            <Button
-                android:id="@+id/decline_button"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/bg"
-                android:text="Decline Order" />
-
-            <Button
-                android:id="@+id/home_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/bg_light"
-                android:text="Back to Home" />
         </LinearLayout>
-</ScrollView>
+    </ScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_baseline_exit_to_app_24"
+        android:backgroundTint="@color/primary"
+        android:contentDescription="Logout"
+        android:layout_margin="16dp" />
+</FrameLayout>

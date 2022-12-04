@@ -8,9 +8,11 @@ public class PendingOrderModelClass {
     String datePlaced;
     String customerName;
     String customerContactNumber;
+    String customerAddress;
+    String customerPickupAddress;
     String customerEmail;
 
-    public PendingOrderModelClass(String id, String description, String note, String status, String datePlaced, String customerName, String customerContactNumber, String customerEmail) {
+    public PendingOrderModelClass(String id, String description, String note, String status, String datePlaced, String customerName, String customerContactNumber, String customerAddress, String customerPickupAddress, String customerEmail) {
         this.id = id;
         this.description = description;
         this.note = note;
@@ -18,6 +20,8 @@ public class PendingOrderModelClass {
         this.datePlaced = datePlaced;
         this.customerName = customerName;
         this.customerContactNumber = customerContactNumber;
+        this.customerAddress = customerAddress;
+        this.customerPickupAddress = customerPickupAddress;
         this.customerEmail = customerEmail;
     }
 
@@ -86,5 +90,21 @@ public class PendingOrderModelClass {
 
     public void setCustomerEmail(String customerEmail) {
         this.customerEmail = customerEmail;
+    }
+
+    public String getCustomerAddress() {
+        return customerAddress;
+    }
+
+    public void setCustomerAddress(String customerAddress) {
+        this.customerAddress = customerAddress;
+    }
+
+    public String getCustomerPickupAddress() {
+        return customerPickupAddress;
+    }
+
+    public void setCustomerPickupAddress(String customerPickupAddress) {
+        this.customerPickupAddress = customerPickupAddress;
     }
 }

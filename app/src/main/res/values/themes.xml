@@ -17,4 +17,17 @@
         <item    name="colorPrimary">@color/text_light</item>
         <item name="android:colorForeground">@color/primary</item>
     </style>
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textColorAlertDialogListItem">@color/text_light</item>
+        <item name="android:background">@color/bg</item>
+        <item name="colorAccent">@color/primary</item>
+    </style>
+    <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:background">@color/bg</item>           <!--header background-->
+        <item name="android:windowBackground">@color/bg_light</item>     <!--calendar background-->
+        <item name="android:colorControlActivated">@color/bg_light</item> <!--selected day-->
+        <item name="android:textColorPrimary">@color/text_light</item> <!--days of the month-->
+        <item name="android:textColorSecondary">@color/text_light</item>    <!--days of the week-->
+    </style>
 </resources>

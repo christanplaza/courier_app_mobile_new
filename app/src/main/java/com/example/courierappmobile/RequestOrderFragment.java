@@ -30,10 +30,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RequestOrderFragment extends Fragment {
-    TextInputEditText textInputEditTextDescription, textInputEditTextNote;
+    TextInputEditText textInputEditTextDescription, textInputEditTextNote, textInputEditTextAddress, textInputEditTextPickupAddress;
     TextView textViewError;
     Button submitButton;
-    String description, note, email, userKey;
+    String description, note, email, userKey, address, pickupAddress;
     ProgressBar progressBar;
     SharedPreferences sharedPreferences;
 
@@ -46,6 +46,8 @@ public class RequestOrderFragment extends Fragment {
 
         textInputEditTextDescription = rootView.findViewById(R.id.request_order_description);
         textInputEditTextNote = rootView.findViewById(R.id.request_order_note);
+        textInputEditTextAddress = rootView.findViewById(R.id.request_order_address);
+        textInputEditTextPickupAddress = rootView.findViewById(R.id.request_order_pickup_address);
         submitButton = rootView.findViewById(R.id.submit);
         progressBar = rootView.findViewById(R.id.loading);
 
@@ -54,11 +56,14 @@ public class RequestOrderFragment extends Fragment {
             public void onClick(View view) {
                 description = textInputEditTextDescription.getText().toString();
                 note = textInputEditTextNote.getText().toString();
+                pickupAddress = textInputEditTextPickupAddress.getText().toString();
+                address = textInputEditTextAddress.getText().toString();
+
                 email = sharedPreferences.getString("email", "true");
                 userKey = sharedPreferences.getString("userKey", "true");
 
                 RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
-                String url = "http://192.168.1.8/courier_app_web/job_orders/create.php";
+                String url = Global.Root_IP + "courier_app_web/job_orders/create.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
@@ -91,6 +96,8 @@ public class RequestOrderFragment extends Fragment {
                         Map<String, String> paramV = new HashMap<>();
                         paramV.put("email", email);
                         paramV.put("description", description);
+                        paramV.put("pickup_address", pickupAddress);
+                        paramV.put("address", address);
                         paramV.put("note", note);
                         paramV.put("userKey", userKey);
                         return paramV;

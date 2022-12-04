@@ -53,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
     HomeFragment homeFragment = new HomeFragment();
-    InstructionsFragment instructionsFragment = new InstructionsFragment();
-    RequestOrderFragment requestOrderFragment = new RequestOrderFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
             drawerMenu.findItem(R.id.drawer_nav_orders).setVisible(false);
             bottomNavigationViewMenu.findItem(R.id.nav_request_order).setVisible(false);
             bottomNavigationViewMenu.findItem(R.id.nav_pending_order).setVisible(true);
-        } else {
-
+            bottomNavigationViewMenu.findItem(R.id.nav_instructions).setVisible(false);
+            bottomNavigationViewMenu.findItem(R.id.nav_ongoing_orders).setVisible(true);
         }
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -140,8 +138,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nav_request_order:
                 fragmentClass = RequestOrderFragment.class;
                 break;
-            case R.id.drawer_nav_profile:
-                fragmentClass = HomeFragment.class;
+            case R.id.nav_ongoing_orders:
+                fragmentClass = OngoingOrdersFragment.class;
                 break;
             case R.id.drawer_nav_orders:
                 fragmentClass = OrdersFragment.class;
@@ -191,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void logout() {
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url = "http://192.168.1.8/courier_app_web/logout.php";
+        String url = Global.Root_IP + "courier_app_web/logout.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
