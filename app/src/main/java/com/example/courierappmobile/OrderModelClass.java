@@ -8,8 +8,10 @@ public class OrderModelClass {
     String datePlaced;
     String address;
     String pickupAddress;
+    String driverName;
+    String driverNumber;
 
-    public OrderModelClass(String id, String description, String note, String status, String datePlaced, String address, String pickupAddress) {
+    public OrderModelClass(String id, String description, String note, String status, String datePlaced, String address, String pickupAddress, String driverName, String driverNumber) {
         this.id = id;
         this.description = description;
         this.note = note;
@@ -17,6 +19,8 @@ public class OrderModelClass {
         this.datePlaced = datePlaced;
         this.address = address;
         this.pickupAddress = pickupAddress;
+        this.driverName = driverName;
+        this.driverNumber = driverNumber;
     }
 
     public OrderModelClass() {
@@ -76,5 +80,22 @@ public class OrderModelClass {
 
     public void setPickupAddress(String pickupAddress) {
         this.pickupAddress = pickupAddress;
+    }
+
+
+    public String getDriverName() {
+        return driverName;
+    }
+
+    public void setDriverName(String driverName) {
+        this.driverName = driverName;
+    }
+
+    public String getDriverNumber() {
+        return driverNumber;
+    }
+
+    public void setDriverNumber(String driverNumber) {
+        this.driverNumber = driverNumber;
     }
 }

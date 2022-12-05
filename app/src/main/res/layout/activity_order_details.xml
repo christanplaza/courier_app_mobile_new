@@ -69,6 +69,38 @@
                     android:padding="3dp"
                     android:textColor="@color/text_light" />
             </TableRow>
+            <TableRow
+                android:id="@+id/details_driver_name"
+                android:visibility="gone">
+                <TextView
+                    android:text="Driver Name"
+                    android:textSize="18dp"
+                    android:padding="3dp"
+                    android:textColor="@color/primary" />
+                <TextView
+                    android:id="@+id/order_driver"
+                    android:text="Order Driver"
+                    android:textSize="18dp"
+                    android:gravity="right"
+                    android:padding="3dp"
+                    android:textColor="@color/text_light" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/details_driver_number"
+                android:visibility="gone">
+                <TextView
+                    android:text="Driver Contact Number"
+                    android:textSize="18dp"
+                    android:padding="3dp"
+                    android:textColor="@color/primary" />
+                <TextView
+                    android:id="@+id/order_driver_number"
+                    android:text="Driver Number"
+                    android:textSize="18dp"
+                    android:gravity="right"
+                    android:padding="3dp"
+                    android:textColor="@color/text_light" />
+            </TableRow>
             <TableRow>
                 <TextView
                     android:text="Note"

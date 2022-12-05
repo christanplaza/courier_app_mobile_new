@@ -86,6 +86,10 @@ public class OrdersFragment extends Fragment implements RecyclerViewInterface {
                                     orderModel.setNote(jsonObject1.getString("note"));
                                     orderModel.setAddress(jsonObject1.getString("delivery_address"));
                                     orderModel.setPickupAddress(jsonObject1.getString("pickup_address"));
+                                    if (!jsonObject1.getString("status").equals("Pending")) {
+                                        orderModel.setDriverName(jsonObject1.getString("name"));
+                                        orderModel.setDriverNumber(jsonObject1.getString("contact_number"));
+                                    }
 
                                     orderList.add(orderModel);
                                 }
@@ -130,6 +134,10 @@ public class OrdersFragment extends Fragment implements RecyclerViewInterface {
         intent.putExtra("status", orderList.get(position).getStatus());
         intent.putExtra("address", orderList.get(position).getAddress());
         intent.putExtra("pickup_address", orderList.get(position).getPickupAddress());
+        if (!orderList.get(position).getStatus().equals("Pending")) {
+            intent.putExtra("driver_name", orderList.get(position).getAddress());
+            intent.putExtra("driver_contact_number", orderList.get(position).getPickupAddress());
+        }
 
         startActivity(intent);
     }
