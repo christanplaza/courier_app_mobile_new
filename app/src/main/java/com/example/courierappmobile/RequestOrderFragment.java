@@ -63,7 +63,7 @@ public class RequestOrderFragment extends Fragment {
                 userKey = sharedPreferences.getString("userKey", "true");
 
                 RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
-                String url = Global.Root_IP + "courier_app_web/job_orders/create.php";
+                String url = Global.Root_IP + "courier_app_web/api/job_orders/create.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {

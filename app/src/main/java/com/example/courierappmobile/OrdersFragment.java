@@ -60,7 +60,7 @@ public class OrdersFragment extends Fragment implements RecyclerViewInterface {
         recyclerView.setAdapter(adapter);
 
         RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
-        String url = Global.Root_IP + "courier_app_web/orders.php";
+        String url = Global.Root_IP + "courier_app_web/api/orders.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -135,8 +135,8 @@ public class OrdersFragment extends Fragment implements RecyclerViewInterface {
         intent.putExtra("address", orderList.get(position).getAddress());
         intent.putExtra("pickup_address", orderList.get(position).getPickupAddress());
         if (!orderList.get(position).getStatus().equals("Pending")) {
-            intent.putExtra("driver_name", orderList.get(position).getAddress());
-            intent.putExtra("driver_contact_number", orderList.get(position).getPickupAddress());
+            intent.putExtra("driver_name", orderList.get(position).getDriverName());
+            intent.putExtra("driver_contact_number", orderList.get(position).getDriverNumber());
         }
 
         startActivity(intent);

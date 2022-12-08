@@ -71,7 +71,7 @@ public class DriverMainActivity extends AppCompatActivity {
         lNote.setVisibility(View.GONE);
 
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url = Global.Root_IP + "courier_app_web/get_driver_orders.php";
+        String url = Global.Root_IP + "courier_app_web/api/get_driver_orders.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -132,7 +132,7 @@ public class DriverMainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url = Global.Root_IP + "courier_app_web/logout.php";
+                String url = Global.Root_IP + "courier_app_web/api/logout.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {

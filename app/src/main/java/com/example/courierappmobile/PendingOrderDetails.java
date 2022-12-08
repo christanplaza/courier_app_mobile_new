@@ -73,7 +73,7 @@ public class PendingOrderDetails extends AppCompatActivity {
 
 
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url = Global.Root_IP + "courier_app_web/get_vacant_drivers.php";
+        String url = Global.Root_IP + "courier_app_web/api/get_vacant_drivers.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -155,7 +155,7 @@ public class PendingOrderDetails extends AppCompatActivity {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                                        String url = Global.Root_IP + "courier_app_web/assign_driver.php";
+                                        String url = Global.Root_IP + "courier_app_web/api/assign_driver.php";
 
                                         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                                                 new Response.Listener<String>() {
@@ -206,7 +206,7 @@ public class PendingOrderDetails extends AppCompatActivity {
 
     public void updateOrder(String status, String email, String userKey, String orderID) {
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url = Global.Root_IP + "courier_app_web/job_orders/update_job_order.php";
+        String url = Global.Root_IP + "courier_app_web/api/job_orders/update_job_order.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

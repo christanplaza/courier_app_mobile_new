@@ -61,7 +61,7 @@ public class OngoingOrdersFragment extends Fragment implements RecyclerViewInter
         recyclerView.setAdapter(adapter);
 
         RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
-        String url = Global.Root_IP + "courier_app_web/job_orders/ongoing.php";
+        String url = Global.Root_IP + "courier_app_web/api/job_orders/ongoing.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

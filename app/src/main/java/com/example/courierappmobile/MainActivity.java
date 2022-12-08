@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void logout() {
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url = Global.Root_IP + "courier_app_web/logout.php";
+        String url = Global.Root_IP + "courier_app_web/api/logout.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

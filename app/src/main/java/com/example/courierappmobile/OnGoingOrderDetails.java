@@ -91,7 +91,7 @@ public class OnGoingOrderDetails extends AppCompatActivity {
 
     public void updateOrder(String status, String email, String userKey, String orderID) {
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url = Global.Root_IP + "courier_app_web/job_orders/update_job_order.php";
+        String url = Global.Root_IP + "courier_app_web/api/job_orders/update_job_order.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

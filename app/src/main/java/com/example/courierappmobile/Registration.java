@@ -55,7 +55,7 @@ public class Registration extends AppCompatActivity {
 
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url = Global.Root_IP + "courier_app_web/register.php";;
+                String url = Global.Root_IP + "courier_app_web/api/register.php";;
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {

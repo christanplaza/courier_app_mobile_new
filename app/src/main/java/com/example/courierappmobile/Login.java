@@ -56,7 +56,7 @@ public class Login extends AppCompatActivity {
                 password = textInputEditTextPassword.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url = Global.Root_IP + "courier_app_web/login.php";
+                String url = Global.Root_IP + "courier_app_web/api/login.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
