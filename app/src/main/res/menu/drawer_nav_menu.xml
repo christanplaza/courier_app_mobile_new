@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!--    <item android:id="@+id/drawer_nav_profile"-->
-<!--        android:title="Profile"-->
-<!--        android:icon="@drawable/ic_baseline_person_24"/>-->
-
-    <item android:id="@+id/drawer_nav_orders"
-        android:title="Orders"
+    <item android:id="@+id/drawer_nav_orders_history"
+        android:title="Orders History"
+        android:visible="false"
         android:icon="@drawable/ic_baseline_view_list_24"/>
 
     <item android:id="@+id/drawer_nav_logout"

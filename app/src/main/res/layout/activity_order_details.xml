@@ -167,6 +167,12 @@
             </TableRow>
         </TableLayout>
         <Button
+            android:id="@+id/cancel_order"
+            android:backgroundTint="@color/danger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel this Order"/>
+        <Button
             android:id="@+id/close_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

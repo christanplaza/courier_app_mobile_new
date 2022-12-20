@@ -42,6 +42,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         textInputEditTextEmail = findViewById(R.id.email);
+        progressBar = findViewById(R.id.loading);
         textInputEditTextPassword = findViewById(R.id.password);
         btnSubmit = findViewById(R.id.submit);
         textViewError = findViewById(R.id.error);
@@ -119,7 +120,6 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Registration.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

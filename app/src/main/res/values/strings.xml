@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Courier App</string>
+    <string name="app_name">CF Transport</string>
     <string name="enter_email">Email</string>
     <string name="enter_password">Password</string>
     <string name="enter_name">Full Name</string>

@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("courier_app", MODE_PRIVATE);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Find our drawer view
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -86,10 +86,10 @@ public class MainActivity extends AppCompatActivity {
         if (sharedPreferences.getString("role", "").equals("admin")) {
             Menu bottomNavigationViewMenu = bottomNavigationView.getMenu();
             Menu drawerMenu = navigationView.getMenu();
-            drawerMenu.findItem(R.id.drawer_nav_orders).setVisible(false);
+            drawerMenu.findItem(R.id.drawer_nav_orders_history).setVisible(true);
+            bottomNavigationViewMenu.findItem(R.id.nav_orders).setVisible(false);
             bottomNavigationViewMenu.findItem(R.id.nav_request_order).setVisible(false);
             bottomNavigationViewMenu.findItem(R.id.nav_pending_order).setVisible(true);
-            bottomNavigationViewMenu.findItem(R.id.nav_instructions).setVisible(false);
             bottomNavigationViewMenu.findItem(R.id.nav_ongoing_orders).setVisible(true);
         }
 
@@ -141,8 +141,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nav_ongoing_orders:
                 fragmentClass = OngoingOrdersFragment.class;
                 break;
-            case R.id.drawer_nav_orders:
+            case R.id.nav_orders:
                 fragmentClass = OrdersFragment.class;
+                break;
+            case R.id.drawer_nav_orders_history:
+                fragmentClass = OrdersHistory.class;
                 break;
             case R.id.nav_pending_order:
                 fragmentClass = PendingOrdersFragment.class;

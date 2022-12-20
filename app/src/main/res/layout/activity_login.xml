@@ -77,7 +77,7 @@
     <TextView
         android:id="@+id/register_now"
         android:textColor="@color/primary"
-        android:text="Don't have an account yet? Register here"
+        android:text="Create an account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
