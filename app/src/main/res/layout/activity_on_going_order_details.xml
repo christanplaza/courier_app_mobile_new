@@ -177,6 +177,12 @@
             </TableRow>
         </TableLayout>
         <Button
+            android:id="@+id/status_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="View Full Status"/>
+        <Button
             android:id="@+id/approve_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

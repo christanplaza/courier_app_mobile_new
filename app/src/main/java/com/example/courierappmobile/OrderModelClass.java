@@ -12,8 +12,11 @@ public class OrderModelClass {
     String driverNumber;
     String name;
     String contactNumber;
+    String deliveryFee;
+    String rating;
+    String feedback;
 
-    public OrderModelClass(String id, String description, String note, String status, String datePlaced, String address, String pickupAddress, String driverName, String driverNumber, String name, String contactNumber) {
+    public OrderModelClass(String id, String description, String note, String status, String datePlaced, String address, String pickupAddress, String driverName, String driverNumber, String name, String contactNumber, String deliveryFee, String rating, String feedback) {
         this.id = id;
         this.description = description;
         this.note = note;
@@ -25,6 +28,9 @@ public class OrderModelClass {
         this.driverNumber = driverNumber;
         this.name = name;
         this.contactNumber = contactNumber;
+        this.deliveryFee = deliveryFee;
+        this.rating = rating;
+        this.feedback = feedback;
     }
 
     public OrderModelClass() {
@@ -117,5 +123,29 @@ public class OrderModelClass {
 
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
+    }
+
+    public String getDeliveryFee() {
+        return deliveryFee;
+    }
+
+    public void setDeliveryFee(String deliveryFee) {
+        this.deliveryFee = deliveryFee;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
     }
 }

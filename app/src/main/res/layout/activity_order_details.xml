@@ -30,11 +30,18 @@
             android:id="@+id/order_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="16dp"
             android:text="Status"
             android:textSize="28dp"
             android:textColor="@color/primary"
             android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/status_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:text="View Full Status"/>
 
         <TableLayout
             android:layout_width="match_parent"
@@ -64,6 +71,21 @@
                 <TextView
                     android:id="@+id/order_placed"
                     android:text="Order Placed Date"
+                    android:textSize="18dp"
+                    android:gravity="right"
+                    android:padding="3dp"
+                    android:textColor="@color/text_light" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/label_delivery_fee"
+                    android:text="Delivery Fee"
+                    android:textSize="18dp"
+                    android:padding="3dp"
+                    android:textColor="@color/primary" />
+                <TextView
+                    android:id="@+id/delivery_fee"
+                    android:text="Delivery Fee"
                     android:textSize="18dp"
                     android:gravity="right"
                     android:padding="3dp"
@@ -166,6 +188,13 @@
                     android:textColor="@color/text_light" />
             </TableRow>
         </TableLayout>
+        <Button
+            android:id="@+id/rate_order"
+            android:visibility="gone"
+            android:backgroundTint="@color/text_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rate this Order"/>
         <Button
             android:id="@+id/cancel_order"
             android:backgroundTint="@color/danger"

@@ -16,7 +16,6 @@
             android:layout_gravity="center_horizontal"
             android:padding="16dp"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/driver_header"
                 android:text="Header"
@@ -58,6 +57,21 @@
                         android:textSize="18dp" />
                     <TextView
                         android:id="@+id/driver_estimated_date"
+                        android:gravity="right"
+                        android:padding="3dp"
+                        android:text="Date"
+                        android:textColor="@color/text_light"
+                        android:textSize="18dp" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:id="@+id/label_fee"
+                        android:padding="3dp"
+                        android:text="Delivery Fee"
+                        android:textColor="@color/primary"
+                        android:textSize="18dp" />
+                    <TextView
+                        android:id="@+id/driver_delivery_fee"
                         android:gravity="right"
                         android:padding="3dp"
                         android:text="Date"
@@ -149,6 +163,22 @@
                         android:textSize="18dp" />
                 </TableRow>
             </TableLayout>
+            <Button
+                android:id="@+id/confirm_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirm Order"/>
+            <Button
+                android:id="@+id/update_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Add a Status Update"/>
+            <Button
+                android:id="@+id/delivered_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mark as Delivered"/>
         </LinearLayout>
     </ScrollView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton

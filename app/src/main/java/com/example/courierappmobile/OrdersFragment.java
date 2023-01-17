@@ -81,7 +81,6 @@ public class OrdersFragment extends Fragment implements RecyclerViewInterface {
                                     OrderModelClass orderModel = new OrderModelClass();
                                     orderModel.setId(jsonObject1.getString("id"));
                                     orderModel.setDatePlaced(jsonObject1.getString("date_placed"));
-                                    orderModel.setStatus(jsonObject1.getString("status"));
                                     orderModel.setDescription(jsonObject1.getString("description"));
                                     orderModel.setNote(jsonObject1.getString("note"));
                                     orderModel.setAddress(jsonObject1.getString("delivery_address"));
@@ -89,7 +88,11 @@ public class OrdersFragment extends Fragment implements RecyclerViewInterface {
                                     if (!jsonObject1.getString("status").equals("Pending")) {
                                         orderModel.setDriverName(jsonObject1.getString("name"));
                                         orderModel.setDriverNumber(jsonObject1.getString("contact_number"));
+                                        orderModel.setDeliveryFee(jsonObject1.getString("delivery_fee"));
                                     }
+                                    orderModel.setStatus(jsonObject1.getJSONObject("recent_status").getString("status"));
+                                    orderModel.setRating(jsonObject1.getString("rating"));
+                                    orderModel.setFeedback(jsonObject1.getString("customer_feedback"));
 
                                     orderList.add(orderModel);
                                 }
@@ -137,6 +140,11 @@ public class OrdersFragment extends Fragment implements RecyclerViewInterface {
         if (!orderList.get(position).getStatus().equals("Pending")) {
             intent.putExtra("driver_name", orderList.get(position).getDriverName());
             intent.putExtra("driver_contact_number", orderList.get(position).getDriverNumber());
+            intent.putExtra("delivery_fee", orderList.get(position).getDeliveryFee());
+        }
+
+        if (orderList.get(position).getRating().equals("null")) {
+            intent.putExtra("notRated", "true");
         }
 
         startActivity(intent);

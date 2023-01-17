@@ -14,11 +14,13 @@
         <!-- Customize your theme here. -->
     </style>
     <style name="BottomNavigationTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item    name="colorPrimary">@color/text_light</item>
+        <item name="colorPrimary">@color/text_light</item>
         <item name="android:colorForeground">@color/primary</item>
     </style>
     <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColorPrimary">#f3f3f3</item>
         <item name="android:textColor">@color/primary</item>
+        <item name="android:colorAccent">@color/text_light</item>
         <item name="android:textColorAlertDialogListItem">@color/text_light</item>
         <item name="android:background">@color/bg</item>
         <item name="colorAccent">@color/primary</item>

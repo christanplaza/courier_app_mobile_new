@@ -28,11 +28,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class OrderDetails extends AppCompatActivity {
-    TextView orderNumber, orderPlaced, orderNote, orderDescription, orderStatus, orderAddress, orderPickupAddress, driverName, driverNumber;
-    Button closeButton, cancelButton;
+    TextView orderNumber, orderPlaced, orderNote, orderDescription, orderStatus, orderAddress, orderPickupAddress, driverName, driverNumber, labelDeliveryFee, deliveryFee;
+    Button closeButton, cancelButton, statusButton, rateButton;
     String email, userKey, orderID;
     TableRow detailsDriverName, detailsDriverNumber;
     SharedPreferences sharedPreferences;
+    boolean notRated;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,18 +57,27 @@ public class OrderDetails extends AppCompatActivity {
         detailsDriverName = findViewById(R.id.details_driver_name);
         detailsDriverNumber = findViewById(R.id.details_driver_number);
         cancelButton = findViewById(R.id.cancel_order);
+        statusButton = findViewById(R.id.status_btn);
+        labelDeliveryFee = findViewById(R.id.label_delivery_fee);
+        deliveryFee = findViewById(R.id.delivery_fee);
+        rateButton = findViewById(R.id.rate_order);
 
+        notRated = getIntent().hasExtra("notRated") && getIntent().getStringExtra("notRated").equals("true");
 
-
-        if (!getIntent().getStringExtra("status").equals("Pending") ) {
+        if (!getIntent().getStringExtra("status").equals("Pending")) {
             driverName.setText(getIntent().getStringExtra("driver_name"));
             driverNumber.setText(getIntent().getStringExtra("driver_contact_number"));
+            deliveryFee.setText("₱" + getIntent().getStringExtra("delivery_fee"));
             detailsDriverName.setVisibility(View.VISIBLE);
             detailsDriverNumber.setVisibility(View.VISIBLE);
+            labelDeliveryFee.setVisibility(View.VISIBLE);
+            deliveryFee.setVisibility(View.VISIBLE);
             cancelButton.setVisibility(View.GONE);
-        }
 
-        Log.d("Intent", getIntent().toUri(0));
+            if (getIntent().getStringExtra("status").equals("Delivered") && notRated){
+                rateButton.setVisibility(View.VISIBLE);
+            }
+        }
 
         orderNumber.setText(getIntent().getStringExtra("id"));
         orderDescription.setText(getIntent().getStringExtra("description"));
@@ -78,7 +88,14 @@ public class OrderDetails extends AppCompatActivity {
         orderPickupAddress.setText(getIntent().getStringExtra("pickup_address"));
         orderID = orderNumber.getText().toString();
 
-        OrdersFragment ordersFragment = new OrdersFragment();
+        rateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RateOrder.class);
+                intent.putExtra("id", getIntent().getStringExtra("id"));
+                startActivity(intent);
+            }
+        });
 
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +103,15 @@ public class OrderDetails extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        statusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), OrderStatusActivity.class);
+                intent.putExtra("id", orderID);
+                startActivity(intent);
             }
         });
 

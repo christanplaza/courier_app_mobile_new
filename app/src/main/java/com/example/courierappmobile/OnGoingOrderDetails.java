@@ -33,8 +33,8 @@ import java.util.Map;
 
 public class OnGoingOrderDetails extends AppCompatActivity {
     TextView orderNumber, orderPlaced, orderNote, orderDescription, orderCustomerName, orderContactNumber, orderAddress, orderPickupAddress;
-    Button closeButton, approveButton, declineButton;
-    String email, userKey;
+    Button closeButton, approveButton, declineButton, statusButton;
+    String email, userKey, orderID;
     SharedPreferences sharedPreferences;
 
     @Override
@@ -53,6 +53,7 @@ public class OnGoingOrderDetails extends AppCompatActivity {
         closeButton = findViewById(R.id.home_button);
         approveButton = findViewById(R.id.approve_button);
         declineButton = findViewById(R.id.decline_button);
+        statusButton = findViewById(R.id.status_btn);
 
         orderNumber.setText(getIntent().getStringExtra("id"));
         orderCustomerName.setText(getIntent().getStringExtra("name"));;
@@ -62,10 +63,22 @@ public class OnGoingOrderDetails extends AppCompatActivity {
         orderPlaced.setText(getIntent().getStringExtra("date_placed"));
         orderAddress.setText(getIntent().getStringExtra("address"));
         orderPickupAddress.setText(getIntent().getStringExtra("pickup_address"));
+        orderID = orderNumber.getText().toString();
+
+        approveButton.setVisibility(View.GONE);
 
         sharedPreferences = getSharedPreferences("courier_app", Context.MODE_PRIVATE);
         email = sharedPreferences.getString("email", "true");
         userKey = sharedPreferences.getString("userKey", "true");
+
+        statusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OnGoingOrderDetails.this, OrderStatusActivity.class);
+                intent.putExtra("id", orderID);
+                startActivity(intent);
+            }
+        });
 
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
